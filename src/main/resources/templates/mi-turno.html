@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head><meta charset="UTF-8"><title>Mi turno · ClinicQueue</title><link rel="stylesheet" th:href="@{/style.css}"></head>
+<body>
+<header><h1>ClinicQueue</h1><a href="/logout">Cerrar sesion</a></header>
+<main>
+    <div th:if="${denied}" class="error">No tienes permiso para ver la fila completa.</div>
+    <h2>Hola, <span th:text="${claims != null ? claims.name : ''}">paciente</span></h2>
+    <article>
+        <p>Tu turno: <strong th:text="${claims != null ? claims.ticket : ''}">0</strong></p>
+        <p>Motivo: <span th:text="${claims != null ? claims.reason : ''}">-</span></p>
+        <p class="meta">Rol: <span th:text="${claims != null ? claims.role : ''}">-</span></p>
+    </article>
+    <p><a href="/staff">Ver la fila completa (solo recepcion)</a></p>
+</main>
+</body>
+</html>
