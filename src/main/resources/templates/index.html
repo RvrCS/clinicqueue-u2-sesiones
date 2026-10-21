@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head><meta charset="UTF-8"><title>ClinicQueue</title><link rel="stylesheet" th:href="@{/style.css}"></head>
+<body>
+<header>
+    <h1>ClinicQueue</h1>
+    <p>Fila de atencion de la clinica universitaria</p>
+</header>
+<main>
+    <p>Hay <strong th:text="${size}">0</strong> pacientes en la fila.</p>
+    <p class="meta">El inicio de sesion esta en desarrollo.</p>
+</main>
+</body>
+</html>
