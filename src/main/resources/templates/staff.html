@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head><meta charset="UTF-8"><title>Recepcion · ClinicQueue</title><link rel="stylesheet" th:href="@{/style.css}"></head>
+<body>
+<header><h1>ClinicQueue · Recepcion</h1><a href="/logout">Cerrar sesion</a></header>
+<main>
+    <h2>Fila completa</h2>
+    <table>
+        <thead><tr><th>Turno</th><th>Paciente</th><th>Telefono</th><th>Motivo</th></tr></thead>
+        <tbody>
+        <tr th:each="p : ${queue}">
+            <td th:text="${p.ticket}">0</td>
+            <td th:text="${p.name}">nombre</td>
+            <td th:text="${p.phone}">tel</td>
+            <td th:text="${p.reason}">motivo</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
